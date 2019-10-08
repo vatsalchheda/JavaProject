@@ -8,6 +8,7 @@ import java.io.*;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -40,8 +41,10 @@ public class ADMINDELETE {
             }
 
             if(c==0)
+            {
                 System.out.println("Registration number not found!");
-
+                JOptionPane.showMessageDialog(null,"Car Not Found","Invalid Details", JOptionPane.ERROR_MESSAGE);
+            }
             fr.close();
             br.close();
 

@@ -101,6 +101,7 @@ public class GUIADMINDELETE extends javax.swing.JFrame {
         deletecar=deletecarinput.getText();
         ADMINDELETE ad = new ADMINDELETE();
         ad.deleteIt(deletecar);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void deletecarinputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletecarinputActionPerformed

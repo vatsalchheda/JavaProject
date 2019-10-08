@@ -14,6 +14,7 @@ public class GUIADMINMODIFY extends javax.swing.JFrame {
     /**
      * Creates new form GUIADMINMODIFY
      */
+    String textfieldsearch1;
     public GUIADMINMODIFY() {
         initComponents();
     }
@@ -29,7 +30,7 @@ public class GUIADMINMODIFY extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        textfieldsearch = new javax.swing.JTextField();
         ModifySubmit = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
@@ -41,7 +42,7 @@ public class GUIADMINMODIFY extends javax.swing.JFrame {
         jLabel1.setText("REG No.");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jTextField1.setText("MH01AX1111");
+        textfieldsearch.setText("MH01AX1111");
 
         ModifySubmit.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         ModifySubmit.setText("Submit");
@@ -65,7 +66,7 @@ public class GUIADMINMODIFY extends javax.swing.JFrame {
                         .addGap(65, 65, 65)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(50, 50, 50)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(textfieldsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(141, 141, 141)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,7 +82,7 @@ public class GUIADMINMODIFY extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textfieldsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(ModifySubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52))
@@ -92,7 +93,10 @@ public class GUIADMINMODIFY extends javax.swing.JFrame {
 
     private void ModifySubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifySubmitActionPerformed
         // TODO add your handling code here:
-           new GUIADMINMODIFY1().setVisible(true);
+           // new GUIADMINMODIFY1().setVisible(true);
+            textfieldsearch1 = textfieldsearch.getText();
+            ADMINUSERDISPLAY ud = new ADMINUSERDISPLAY();
+            ud.findIt(textfieldsearch1);
     }//GEN-LAST:event_ModifySubmitActionPerformed
 
     /**
@@ -135,6 +139,6 @@ public class GUIADMINMODIFY extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField textfieldsearch;
     // End of variables declaration//GEN-END:variables
 }

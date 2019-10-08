@@ -20,6 +20,13 @@ public class GUIADMIN1 extends javax.swing.JFrame {
         submit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
+            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
+            }
+            public void windowLostFocus(java.awt.event.WindowEvent evt) {
+                formWindowLostFocus(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -112,14 +119,14 @@ public class GUIADMIN1 extends javax.swing.JFrame {
                     userid.setText(null);
                     pass.setText(null);
                     new GUIADMIN2().setVisible(true);
-                    System.out.println("SUBMIT PRESSED" + username +password );
+                    dispose();
                 }
                else
                {
                    System.out.println("Wrong Id/Password ");
                    JOptionPane.showMessageDialog(null,"Invalid Login Details","Login Error", JOptionPane.ERROR_MESSAGE);
                    userid.setText(null);
-                    pass.setText(null);
+                   pass.setText(null);
                }
         
          
@@ -133,6 +140,11 @@ public class GUIADMIN1 extends javax.swing.JFrame {
     private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
     
     }//GEN-LAST:event_passActionPerformed
+
+    private void formWindowLostFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowLostFocus
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_formWindowLostFocus
         
     
 

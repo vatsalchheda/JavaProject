@@ -5,6 +5,11 @@
  */
 package sap120;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Vatsal Chheda
@@ -13,9 +18,19 @@ public class GUIADMINMODIFY1 extends javax.swing.JFrame {
 String ownername1 , registrationno1 , carmodel1 , insurancestatus1 , fines1;
     /**
      * Creates new form GUIADMINMODIFY1
+     * @param OwnerName
+     * @param ModelName
+     * @param RegisterNumber
+     * @param InsuranceStatus
+     * @param Fine
      */
-    public GUIADMINMODIFY1() {
+    public GUIADMINMODIFY1(String OwnerName,String ModelName,String RegisterNumber,String InsuranceStatus,String Fine) {
         initComponents();
+            modifyownername.setText(OwnerName);
+            modifyregistrationno.setText(RegisterNumber);
+            modifycarmodel.setText(ModelName);
+            modifyinsurancestatus.setText(InsuranceStatus);
+            modifyfines.setText(Fine);
     }
 
     /**
@@ -81,9 +96,9 @@ String ownername1 , registrationno1 , carmodel1 , insurancestatus1 , fines1;
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(163, 163, 163)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(163, 163, 163)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -103,7 +118,7 @@ String ownername1 , registrationno1 , carmodel1 , insurancestatus1 , fines1;
                             .addComponent(modifyfines)
                             .addComponent(modifyinsurancestatus)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
+                        .addGap(309, 309, 309)
                         .addComponent(modifybtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(231, Short.MAX_VALUE))
         );
@@ -141,30 +156,35 @@ String ownername1 , registrationno1 , carmodel1 , insurancestatus1 , fines1;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modifyfines, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(87, 87, 87)
+                .addGap(54, 54, 54)
                 .addComponent(modifybtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(46, 46, 46))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void modifyregistrationnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyregistrationnoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_modifyregistrationnoActionPerformed
 
     private void modifyownernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifyownernameActionPerformed
-     // TODO add your handling code here:
+    
     }//GEN-LAST:event_modifyownernameActionPerformed
 
     private void modifybtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifybtn1ActionPerformed
      ownername1=modifyownername.getText();
      registrationno1=modifyregistrationno.getText();
-      fines1=modifyfines.getText();
-      insurancestatus1=modifyinsurancestatus.getText();
-        carmodel1=modifycarmodel.getText();  
-        System.out.println(ownername1 + registrationno1 + fines1 + insurancestatus1 + carmodel1);
-// TODO add your handling code here:
+     fines1=modifyfines.getText();
+     insurancestatus1=modifyinsurancestatus.getText();
+     carmodel1=modifycarmodel.getText();  
+      try {
+            ADMINADD a=new ADMINADD(ownername1,carmodel1,registrationno1,insurancestatus1,fines1);
+        } catch (IOException ex) {
+            Logger.getLogger(GUIADMINADD.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      JOptionPane.showMessageDialog(null,"Details Modified","Successfull", JOptionPane.INFORMATION_MESSAGE);
+
     }//GEN-LAST:event_modifybtn1ActionPerformed
 
     /**

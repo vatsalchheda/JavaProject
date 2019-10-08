@@ -11,6 +11,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -48,7 +49,14 @@ public class GUIADMINADD extends javax.swing.JFrame {
         ADMINADDMODEL = new javax.swing.JLabel();
         MODELADD = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowFocusListener(new java.awt.event.WindowFocusListener() {
+            public void windowGainedFocus(java.awt.event.WindowEvent evt) {
+            }
+            public void windowLostFocus(java.awt.event.WindowEvent evt) {
+                formWindowLostFocus(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -212,7 +220,8 @@ public class GUIADMINADD extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(GUIADMINADD.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println("Owner: " + OWNER +" REGISTERATION NUMBER: "+ REGNUMBER +" INSURANCE: "+INSURANCE + "MODELNAME:"+MODELNAME+"FINES:"+FINES );
+        JOptionPane.showMessageDialog(null,"Added Successfully","Add Car Details", JOptionPane.INFORMATION_MESSAGE);
+     
     }//GEN-LAST:event_ADDBUTTONActionPerformed
 
     private void FINESADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FINESADDActionPerformed
@@ -222,6 +231,11 @@ public class GUIADMINADD extends javax.swing.JFrame {
     private void MODELADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MODELADDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_MODELADDActionPerformed
+
+    private void formWindowLostFocus(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowLostFocus
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_formWindowLostFocus
 
     /**
      * @param args the command line arguments
