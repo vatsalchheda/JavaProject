@@ -1,0 +1,1 @@
+This project is a vehivle registration system. The user can view the details of their car and any pending fines by entering the registration number. The administrator can add, update, delete or view vehicle details, and the admin is granted access through a specific username and password.
